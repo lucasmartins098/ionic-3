@@ -15,11 +15,27 @@ export class MovieProvider {
   private baseAPI = "https://api.themoviedb.org/3";
 
   constructor(public http: Http) {
-    console.log('Hello MovieProvider Provider');
+    console.log('construtor do Movie Provider');
   }
 
   getLatestMovies(){
     return this.http.get(this.baseAPI + "/movie/popular?api_key=ff976cfaa506c7fa816e2e1ebe64ff7d");
+  }
+
+  // getMovieDetalhe(idFilme){
+  //   return this.http.get(this.baseAPI + `/movie/${idFilme}?api_key=ff976cfaa506c7fa816e2e1ebe64ff7d`);
+  // }
+
+
+  getMovieDetalhe(idFilme){
+    console.log(idFilme);
+    return this.http.get(this.baseAPI + `/movie/${idFilme}?api_key=` + this.getApiKey());
+}
+
+  getApiKey(): string{
+
+    return "51e4e9d52532d389174b5252cd99d33d";
+
   }
 
 }
