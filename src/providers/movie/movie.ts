@@ -18,14 +18,13 @@ export class MovieProvider {
     console.log('construtor do Movie Provider');
   }
 
-  getLatestMovies(){
-    return this.http.get(this.baseAPI + "/movie/popular?api_key=ff976cfaa506c7fa816e2e1ebe64ff7d");
+  getLatestMovies(page = 1){
+    return this.http.get(this.baseAPI + `/movie/popular?page=${page}&api_key=` + this.getApiKey());
   }
 
   // getMovieDetalhe(idFilme){
   //   return this.http.get(this.baseAPI + `/movie/${idFilme}?api_key=ff976cfaa506c7fa816e2e1ebe64ff7d`);
   // }
-
 
   getMovieDetalhe(idFilme){
     console.log(idFilme);

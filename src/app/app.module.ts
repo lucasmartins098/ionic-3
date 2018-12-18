@@ -12,12 +12,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { FeedPageModule } from '../pages/feed/feed.module';
-import {HttpModule} from "@angular/http";
+import { HttpModule } from "@angular/http";
 import { MovieProvider } from '../providers/movie/movie';
 import { ConfiguracoesPageModule } from '../pages/configuracoes/configuracoes.module';
 import { SobrePageModule } from '../pages/sobre/sobre.module';
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
 import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalhes.module';
+import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
+import { CadastroProvider } from '../providers/cadastro/cadastro';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalh
     ConfiguracoesPageModule,
     SobrePageModule,
     PerfilPageModule,
-    FilmesDetalhesPageModule
+    FilmesDetalhesPageModule,
+    CadastroPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,7 +53,8 @@ import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalh
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MovieProvider
+    MovieProvider,
+    CadastroProvider
   ]
 })
 export class AppModule {}
